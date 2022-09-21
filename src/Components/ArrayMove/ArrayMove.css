@@ -1,0 +1,350 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: default;
+}
+
+h1 {
+    text-align: center;
+}
+
+.box-container1 {
+    display: flex;
+    justify-content: space-around;
+    background-color: greenyellow;
+}
+
+.box {
+    background-color: deeppink;
+    width: 20%;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    border: 1px solid black;
+}
+
+#item-box1{
+    background-color: skyblue;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    height: 20px;
+    margin: 5%;
+    padding: 1%;
+    border: 1px solid black;
+    display: block
+}
+
+#item-box2{
+    background-color: skyblue;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    height: 20px;
+    margin: 5%;
+    padding: 1%;
+    border: 1px solid black;
+    display: none;
+}
+
+#button-box1 {
+    background-color: beige;
+    text-align: center;
+    width: 30%; 
+}
+
+#button-box1 button {
+    background-color: yellow;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 60%;
+    height: 40px;
+    font-size: 1.5em;
+    border-radius: 30px;
+    box-shadow: 0px 2px;
+    cursor: pointer;
+}
+
+#button-box button:active {
+    box-shadow: none;
+}
+
+.box-container2 {
+    display: flex;
+    justify-content: space-around;
+    background-color: aquamarine;
+}
+
+#button-box2 {
+    background-color: beige;
+    text-align: center;
+    width: 30%; 
+}
+
+.button-box-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button-box-container #left-arrow {
+    width: 25%;
+}
+
+.button-box-container #right-arrow {
+    width: 25%;
+}
+
+.button-box-container #arrow-box {
+    width: 40%;
+    display: inline-block;
+    background-color: #FFFF00;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#array-box1{
+    background-color: skyblue;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    border: 1px solid black;
+}
+
+#array-box2{
+    background-color: skyblue;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    border: 1px solid black;
+}
+
+.box-container3 {
+    display: flex;
+    justify-content: space-around;
+    background-color: orange;
+}
+
+.box-container3 .box {
+    width: 35%;
+}
+
+#array-box3{
+    background-color: greenyellow;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    border: 1px solid black;
+}
+
+#array-box4{
+    background-color: #DFB2F4;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    border: 1px solid black;
+}
+
+#button-box3 {
+    background-color: chartreuse;
+    text-align: center;
+    width: 30%; 
+    height: auto;
+}
+
+#array-box3-1{
+    display: flex;
+    justify-content: end;
+    background-color: greenyellow;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    padding-right: 5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#array-box3-2{
+    display: flex;
+    justify-content: end;
+    background-color: greenyellow;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    padding-right: 5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#array-box3-3{
+    display: flex;
+    justify-content: end;
+    background-color: greenyellow;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    padding-right: 5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#array-box3-4{
+    display: flex;
+    justify-content: end;
+    background-color: greenyellow;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    padding-right: 5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#array-box3-5{
+    display: flex;
+    justify-content: end;
+    background-color: greenyellow;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    min-height: 20px;
+    height: auto;
+    margin: 5%;
+    padding: 1%;
+    padding-right: 5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#add-remove-select-1 {
+    background-color: whitesmoke;
+    border: 2px solid black;
+    min-width: 40px;
+    height: 20px;
+    align-self: center;
+}
+
+#add-remove-select-1 :hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-remove-select-2 {
+    background-color: whitesmoke;
+    border: 2px solid black;
+    min-width: 40px;
+    height: 20px;
+    align-self: center;
+}
+
+#add-remove-select-2 :hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-remove-select-3 {
+    background-color: whitesmoke;
+    border: 2px solid black;
+    min-width: 40px;
+    height: 20px;
+    align-self: center;
+}
+
+#add-remove-select-3 :hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-remove-select-4 {
+    background-color: whitesmoke;
+    border: 2px solid black;
+    min-width: 40px;
+    height: 20px;
+    align-self: center;
+}
+
+#add-remove-select-4 :hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-remove-select-5 {
+    background-color: whitesmoke;
+    border: 2px solid black;
+    min-width: 40px;
+    height: 20px;
+    align-self: center;
+}
+
+#add-remove-select-5 :hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#playlist-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: deeppink;
+    text-align: center;
+    align-content: center;
+    width: 90%;
+    min-height: 20px;
+    height: auto;
+    margin: 0px;
+    padding: 1%;
+    /* padding-right: 5%; */
+    /* border: 1px dotted black; */
+    text-align: center;
+}
+
+#playlist-box div{
+    display: flex;
+    justify-content: center;
+    background-color: lightseagreen;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+    min-height: 20px;
+    height: auto;
+    margin: 2%;
+    padding: 1%;
+    /* padding-right: 5%; */
+    border: 1px solid black;
+    text-align: center;
+}
+
+#playlist-box div #test-div {
+    display: none;
+}

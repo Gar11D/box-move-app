@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import BoxMove from '../BoxMove/BoxMove';
+import ArrayMove from '../ArrayMove/ArrayMove';
 
 class App extends React.Component {
   
@@ -50,6 +51,24 @@ class App extends React.Component {
               </div>
           </div>
       </div>
+      <div class="box-container2">
+        <div class="box">
+            <h3>Array 1</h3>
+            <div id="array-box1"> </div>
+        </div>
+        <div class ="box" id="button-box2">
+            <p>Click on the button below to move the array values between boxes</p>
+            <div class="button-box-container">
+                <button id="left-arrow" onclick="arrayMoveLeft()">Move left</button>
+                <div id="arrow-box"> Click on the arrows to move the items </div>
+                <button id="right-arrow" onclick="arrayMoveRight()"> Move right</button>
+            </div>
+        </div>
+        <div class="box">
+            <h3>Array 2</h3>
+            <div id="array-box2"> </div>
+        </div>
+    </div>
     </div>
     )
   }
