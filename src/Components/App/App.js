@@ -8,42 +8,44 @@ class App extends React.Component {
     super (props);
     
     this.state = {
-      Box1 : ['Item 1'],
-      Box2 : []
+      Box1 : 'Item 1',
+      Box2 : ''
     };
+
+    this.updateBox1andBox2 = this.updateBox1andBox2.bind(this);
 
   }
 
-  // this.state.Box1[0] ? is correct for verifying if there is anything in the array
-  
-  // updateBoxes() {
-  //   const update = () => {
-  //   this.state.Box1[0] ? 
-  //   this.setState({Box2: this.state.Box1 }):
-  //   this.setState({Box1: this.state.Box2})
-  //   };
-  //   update();
-  // }
+  updateBox1andBox2() {
+    let value1;
+    let value2;
+    return (this.state.Box1 === 'Item 1' 
+    ?
+    (value1 = '', value2 = 'Item 1', this.setState({Box1: value1}), this.setState({Box2: value2}))
+    : 
+    (value1 = 'Item 1', value2 = '', this.setState({Box1: value1}), this.setState({Box2: value2}))
+    )
+  }
 
   render () { 
     return(
     <div>
       <h1>Box Move Practice</h1>
       <br/>
-      <div class="box-container">
-          <div class="box">
+      <div className='box-container'>
+          <div className='box'>
               <h3>Box 1</h3>
-              <div class="item-box">
+              <div className='item-box'>
                   <span>{this.state.Box1}</span>
               </div>
           </div>
-          <div class ="box" id="button-box">
+          <div className='box' id="button-box">
               <p>Click on the button below to move the item between boxes</p>
-              {/* <BoxMove /> */}
+              <BoxMove onBoxChange={this.updateBox1andBox2}/>
           </div>
-          <div class="box">
+          <div className="box">
               <h3>Box 2</h3>
-              <div class="item-box">
+              <div className="item-box">
                   <span>{this.state.Box2}</span>
               </div>
           </div>
