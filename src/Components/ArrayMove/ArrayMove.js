@@ -6,11 +6,12 @@ class ArrayMove extends React.Component {
         super(props);
 
         this.handleArrayMoveRight = this.handleArrayMoveRight.bind(this);
+        this.handleArrayMoveLeft = this.handleArrayMoveLeft.bind(this);
     }
 
-    // handleArrayMoveLeft () => {
-    //     this.props.
-    // }
+    handleArrayMoveLeft () {
+        this.props.onArrayMoveLeft();
+    }
 
     handleArrayMoveRight () {
         this.props.onArrayMoveRight();
@@ -21,7 +22,7 @@ class ArrayMove extends React.Component {
             <div className ="box" id="button-box2">
                 <p>Click on the buttons below to move the array values between boxes</p>
                 <div className="button-box-container">
-                    <button id="left-arrow" >Move left</button>
+                    <button id="left-arrow" onClick={this.handleArrayMoveLeft}>Move left</button>
                     <div id="arrow-box"> Click on the arrows to move the items </div>
                     <button id="right-arrow" onClick={this.handleArrayMoveRight}> Move right</button>
                 </div>
