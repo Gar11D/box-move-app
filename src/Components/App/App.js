@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import BoxMove from '../BoxMove/BoxMove';
 import ArrayMove from '../ArrayMove/ArrayMove';
+import Playlist from '../Playlist/Playlist';
 
 class App extends React.Component {
   
@@ -12,13 +13,22 @@ class App extends React.Component {
       box1 : 'Item 1',
       box2 : '',
       fruitArray: ['apples', ' bananas', ' oranges', ' pears'],
-      myArray: []
+      myArray: [],
+      songList:[
+      {_id:1, songTitle: 'Umbrella', artist: 'Rihanna', album: 'Good Girl Gone Bad'},
+      {_id:2, songTitle: 'Frozen', artist: 'Madonna', album: 'Ray of Light'},
+      {_id:3, songTitle: 'Here with me', artist: 'Dido', album: 'No Angel'},
+      {_id:4, songTitle: 'Biology', artist: 'Girls Aloud', album: 'Chemistry'},
+      {_id:5, songTitle: 'Girlfriend', artist: 'Avril Lavigne', album: 'The Best Damn Thing'}
+      ],
+      playlist: []
     };
 
     this.updateBox1andBox2 = this.updateBox1andBox2.bind(this);
     this.arrayMoveRight = this.arrayMoveRight.bind(this);
     this.arrayMoveLeft = this.arrayMoveLeft.bind(this);
     this.fruitArrayListify = this.fruitArrayListify.bind(this);
+    this.addSong = this.addSong.bind(this);
 
   }
 
@@ -90,6 +100,41 @@ class App extends React.Component {
     }
   }
 
+  addSong (id) {
+    const newSongList = this.state.songList;
+    const newPlaylist = this.state.playlist;
+    const result = newSongList.find(x => x._id === id);
+
+    if (newPlaylist.find(x => x._id === id)) {
+        // alert('Song #' + id + ' is already in the playlist');
+        console.log('already in playlist');
+    }
+    else {
+        newPlaylist.push(result);
+
+        const newDiv = document.createElement(`div`);
+        newDiv.setAttribute("id", `songId${id}`);
+
+        const newContent = document.createTextNode(
+            result.songTitle + " | " + result.artist
+            + " | " + result.album);
+
+        newDiv.appendChild(newContent);
+
+        const parentDiv = document.getElementById("playlist-box");
+        const siblingDiv = document.getElementById("test-div");
+        parentDiv.insertBefore(newDiv, siblingDiv);
+        console.log(newPlaylist);
+        return (
+          this.setState({songList: newSongList}),
+          this.setState({playlist: newPlaylist}) 
+        )
+    }
+  }
+
+  //will need below method to render songs to their boxes
+  // songListify () 
+
   render () { 
 
     const fruitArrayList = this.fruitArrayListify();
@@ -131,7 +176,8 @@ class App extends React.Component {
             <h3>Array 2</h3>
             <div id="array-box2">{myArrayList}</div>
         </div>
-    </div>
+      </div>
+      <Playlist   onAddSong={this.addSong}/>
     </div>
     )
   }
