@@ -54,19 +54,47 @@ class App extends React.Component {
         this.setState({myArray: myArrayNew}),
         this.setState({fruitArray: fruitArrayNew})
         )
-      : alert("Array 1 is empty.")
+      : alert("Array 2 is empty.")
     );
   }
-  // below is fruitArrayListify with problems, infinite loop when push activated into myarray
-  // fruitArrayListify () {
-  //   let fruitArrayList = this.state.fruitArray;
-  //   for (let i =0; i <= fruitArrayList.length - 2; i++) {
-  //     return `${fruitArrayList[i]}, `;
-  //   }
-  //   this.setState({fruitArray: fruitArrayList});
-  // }
+  
+  fruitArrayListify () {
+    let fruitArrayList = this.state.fruitArray;
+    let newFruitArrayList = [];
+    for (let i =0; i <= fruitArrayList.length -2; i++) {
+      newFruitArrayList.push(`${fruitArrayList[i]}, `);
+    }
+    for (let i= fruitArrayList.length - 1; i <= fruitArrayList.length -1; i++ ){
+      newFruitArrayList.push(`${fruitArrayList[i]}.`)
+    }
+    if (!fruitArrayList[0]) {
+      return ''
+    } else {
+      return newFruitArrayList;
+    }
+  }
+
+  myArrayListify () {
+    let myArrayList = this.state.myArray;
+    let newMyArrayList = [];
+    for (let i =0; i <= myArrayList.length -2; i++) {
+      newMyArrayList.push(`${myArrayList[i]}, `);
+    }
+    for (let i= myArrayList.length - 1; i <= myArrayList.length -1; i++ ){
+      newMyArrayList.push(`${myArrayList[i]}.`)
+    }
+    if (!myArrayList[0]) {
+      return ''
+    } else {
+      return newMyArrayList;
+    }
+  }
 
   render () { 
+
+    const fruitArrayList = this.fruitArrayListify();
+    const myArrayList = this.myArrayListify();
+
     return(
     <div>
       <h1>Box Move Practice</h1>
@@ -92,14 +120,16 @@ class App extends React.Component {
       <div className="box-container2">
         <div className="box">
             <h3>Array 1</h3>
-            <div id="array-box1">{this.fruitArrayListify()}</div>
+            <div id="array-box1">
+              {fruitArrayList}
+            </div>
         </div>
         <ArrayMove  onArrayMoveRight={this.arrayMoveRight}
                     onArrayMoveLeft={this.arrayMoveLeft}
         />
         <div className="box">
             <h3>Array 2</h3>
-            <div id="array-box2">{this.state.myArray}</div>
+            <div id="array-box2">{myArrayList}</div>
         </div>
     </div>
     </div>
