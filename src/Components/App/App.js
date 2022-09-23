@@ -27,9 +27,14 @@ class App extends React.Component {
     this.updateBox1andBox2 = this.updateBox1andBox2.bind(this);
     this.arrayMoveRight = this.arrayMoveRight.bind(this);
     this.arrayMoveLeft = this.arrayMoveLeft.bind(this);
-    this.fruitArrayListify = this.fruitArrayListify.bind(this);
+    //this.fruitArrayListify = this.fruitArrayListify.bind(this);
     this.addSong = this.addSong.bind(this);
+    this.listify = this.listify.bind(this);
 
+  }
+
+  listify = function(arr) {
+    return arr.join(', ') + ( arr.length > 0 ? '.' : '' );
   }
 
   updateBox1andBox2() {
@@ -48,8 +53,11 @@ class App extends React.Component {
     return ( fruitArrayNew[0]
       ? (myArrayNew.push(fruitArrayNew[fruitArrayNew.length -1]), 
         fruitArrayNew.splice(fruitArrayNew.length -1, 1),
-        this.setState({myArray: myArrayNew}),
-        this.setState({fruitArray: fruitArrayNew})
+        this.setState({
+          myArray: myArrayNew,
+          fruitArray: fruitArrayNew
+        })
+        //this.setState({fruitArray: fruitArrayNew})
         )
       : alert("Array 1 is empty.")
     );
@@ -68,6 +76,7 @@ class App extends React.Component {
     );
   }
   
+  /*
   fruitArrayListify () {
     let fruitArrayList = this.state.fruitArray;
     let newFruitArrayList = [];
@@ -98,7 +107,7 @@ class App extends React.Component {
     } else {
       return newMyArrayList;
     }
-  }
+  } */
 
   addSong (id) {
     const newSongList = this.state.songList;
@@ -137,8 +146,8 @@ class App extends React.Component {
 
   render () { 
 
-    const fruitArrayList = this.fruitArrayListify();
-    const myArrayList = this.myArrayListify();
+    //const fruitArrayList = this.fruitArrayListify();
+    //const myArrayList = this.myArrayListify();
 
     return(
     <div>
@@ -166,7 +175,7 @@ class App extends React.Component {
         <div className="box">
             <h3>Array 1</h3>
             <div id="array-box1">
-              {fruitArrayList}
+              {this.listify(this.state.fruitArray)}
             </div>
         </div>
         <ArrayMove  onArrayMoveRight={this.arrayMoveRight}
@@ -174,10 +183,10 @@ class App extends React.Component {
         />
         <div className="box">
             <h3>Array 2</h3>
-            <div id="array-box2">{myArrayList}</div>
+            <div id="array-box2">{this.listify(this.state.myArray)}</div>
         </div>
       </div>
-      <Playlist   onAddSong={this.addSong}/>
+      {/* <Playlist   onAddSong={this.addSong}/> */}
     </div>
     )
   }
