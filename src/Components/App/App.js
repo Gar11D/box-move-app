@@ -18,6 +18,7 @@ class App extends React.Component {
     this.updateBox1andBox2 = this.updateBox1andBox2.bind(this);
     this.arrayMoveRight = this.arrayMoveRight.bind(this);
     this.arrayMoveLeft = this.arrayMoveLeft.bind(this);
+    this.fruitArrayListify = this.fruitArrayListify.bind(this);
 
   }
 
@@ -56,12 +57,13 @@ class App extends React.Component {
       : alert("Array 1 is empty.")
     );
   }
-
+  // below is fruitArrayListify with problems, infinite loop when push activated into myarray
   // fruitArrayListify () {
-  //   fruitArrayList = this.state.fruitArray;
-  //   return (
-  //     for (let i =0; i <= playlist.length - 2;  )
-  //   )
+  //   let fruitArrayList = this.state.fruitArray;
+  //   for (let i =0; i <= fruitArrayList.length - 2; i++) {
+  //     return `${fruitArrayList[i]}, `;
+  //   }
+  //   this.setState({fruitArray: fruitArrayList});
   // }
 
   render () { 
@@ -90,7 +92,7 @@ class App extends React.Component {
       <div className="box-container2">
         <div className="box">
             <h3>Array 1</h3>
-            <div id="array-box1">{this.state.fruitArray}</div>
+            <div id="array-box1">{this.fruitArrayListify()}</div>
         </div>
         <ArrayMove  onArrayMoveRight={this.arrayMoveRight}
                     onArrayMoveLeft={this.arrayMoveLeft}
